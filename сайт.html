@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>МКУ "Центр комплексного содержания территорий"</title>
+    <style>
+        /* Общие стили */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Шапка */
+        header {
+            background-color: #2c6e3c;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 60px;
+            margin-right: 15px;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .logo-text p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        /* Навигация */
+        nav {
+            background-color: #1a4b27;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            position: relative;
+        }
+        
+        nav ul li a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            transition: background 0.3s;
+        }
+        
+        nav ul li a:hover {
+            background-color: #2c6e3c;
+        }
+        
+        /* Баннер */
+        .banner {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('city-maintenance.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .banner-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .banner-content p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #2c6e3c;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #1a4b27;
+        }
+        
+        /* Основной контент */
+        .services {
+            padding: 50px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: #2c6e3c;
+            margin-bottom: 15px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .service-content {
+            padding: 20px;
+        }
+        
+        .service-content h3 {
+            margin-bottom: 10px;
+            color: #2c6e3c;
+        }
+        
+        /* Новости */
+        .news {
+            padding: 50px 0;
+            background-color: #e9f5ec;
+        }
+        
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .news-card {
+            background: white;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .news-content {
+            padding: 20px;
+        }
+        
+        .news-date {
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .news-content h3 {
+            margin-bottom: 10px;
+        }
+        
+        /* Контакты */
+        .contacts {
+            padding: 50px 0;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .contact-card {
+            background: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .contact-card i {
+            font-size: 2rem;
+            color: #2c6e3c;
+            margin-bottom: 20px;
+        }
+        
+        /* Подвал */
+        footer {
+            background-color: #1a4b27;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+            
+            .banner {
+                height: 300px;
+            }
+            
+            .banner-content h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png" alt="Логотип МКУ ЦКСТ">
+                <div class="logo-text">
+                    <h1>МКУ "Центр комплексного содержания территорий"</h1>
+                    <p>Официальный сайт муниципального учреждения</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Навигация -->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">О нас</a></li>
+                <li><a href="#">Услуги</a></li>
+                <li><a href="#">Новости</a></li>
+                <li><a href="#">Документы</a></li>
+                <li><a href="#">Контакты</a></li>
+                <li><a href="#">Обратная связь</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Баннер -->
+    <section class="banner">
+        <div class="banner-content">
+            <h2>Комплексное содержание городских территорий</h2>
+            <p>Обеспечиваем чистоту, порядок и благоустройство муниципальных территорий для комфортной жизни горожан</p>
+            <a href="#" class="btn">Оставить заявку</a>
+        </div>
+    </section>
+    
+    <!-- Услуги -->
+    <section class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Наши услуги</h2>
+                <p>Полный спектр услуг по содержанию городских территорий</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="service1.jpg" alt="Уборка территорий">
+                    <div class="service-content">
+                        <h3>Уборка городских территорий</h3>
+                        <p>Комплексная уборка улиц, площадей, парков и других общественных пространств</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <img src="service2.jpg" alt="Зеленое хозяйство">
+                    <div class="service-content">
+                        <h3>Зеленое хозяйство</h3>
+                        <p>Уход за зелеными насаждениями, газонами, клумбами и цветниками</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <img src="service3.jpg" alt="Дорожная деятельность">
+                    <div class="service-content">
+                        <h3>Дорожная деятельность</h3>
+                        <p>Содержание дорог, тротуаров, пешеходных зон в надлежащем состоянии</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Новости -->
+    <section class="news">
+        <div class="container">
+            <div class="section-title">
+                <h2>Новости</h2>
+                <p>Актуальные события и объявления</p>
+            </div>
+            
+            <div class="news-grid">
+                <div class="news-card">
+                    <img src="news1.jpg" alt="Новость 1">
+                    <div class="news-content">
+                        <div class="news-date">15.10.2023</div>
+                        <h3>Осенний субботник в городском парке</h3>
+                        <p>Приглашаем всех желающих принять участие в осеннем субботнике по уборке городского парка...</p>
+                        <a href="#" class="btn">Подробнее</a>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <img src="news2.jpg" alt="Новость 2">
+                    <div class="news-content">
+                        <div class="news-date">10.10.2023</div>
+                        <h3>Новые контейнерные площадки</h3>
+                        <p>В микрорайоне "Центральный" установлены новые контейнерные площадки для раздельного сбора мусора...</p>
+                        <a href="#" class="btn">Подробнее</a>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <img src="news3.jpg" alt="Новость 3">
+                    <div class="news-content">
+                        <div class="news-date">05.10.2023</div>
+                        <h3>Конкурс на лучшее озеленение</h3>
+                        <p>Объявляем конкурс среди жителей города на лучшее озеленение придомовых территорий...</p>
+                        <a href="#" class="btn">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Контакты -->
+    <section class="contacts">
+        <div class="container">
+            <div class="section-title">
+                <h2>Контакты</h2>
+                <p>Свяжитесь с нами удобным для вас способом</p>
+            </div>
+            
+            <div class="contact-info">
+                <div class="contact-card">
+                    <i>📍</i>
+                    <h3>Адрес</h3>
+                    <p>г. Ваш Город, ул. Центральная, д. 1</p>
+                </div>
+                
+                <div class="contact-card">
+                    <i>📞</i>
+                    <h3>Телефон</h3>
+                    <p>+7 (XXX) XXX-XX-XX</p>
+                    <p>Горячая линия: 8-800-XXX-XX-XX</p>
+                </div>
+                
+                <div class="contact-card">
+                    <i>✉️</i>
+                    <h3>Электронная почта</h3>
+                    <p>info@ckst.ru</p>
+                    <p>priem@ckst.ru</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Подвал -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">Главная</a>
+                <a href="#">О нас</a>
+                <a href="#">Услуги</a>
+                <a href="#">Новости</a>
+                <a href="#">Документы</a>
+                <a href="#">Контакты</a>
+            </div>
+            <div class="copyright">
+                &copy; 2023 МКУ "Центр комплексного содержания территорий". Все права защищены.
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Простой JavaScript для мобильного меню
+        document.addEventListener('DOMContentLoaded', function() {
+            // Можно добавить функционал для мобильного меню
+            console.log('Сайт загружен');
+            
+            // Пример: обработчик для кнопки "Оставить заявку"
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    alert('Форма заявки будет открыта в новом окне');
+                    // Здесь можно добавить открытие модального окна с формой
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+Это базовая структура сайта, которую можно доработать:
+
+Добавить реальные изображения (logo.png, service1.jpg и т.д.)
+
+Настроить цвета под корпоративный стиль организации
+
+Добавить больше страниц и разделов
+
+Интегрировать систему обратной связи
+
+Добавить модуль для публикации новостей (например, на CMS)
+
+Для полноценного сайта лучше использовать CMS (WordPress, Bitrix, Joomla) или фреймворки (Laravel, Django), но этот код дает хорошую основу для статического сайта.
+
+а ты можешь добавить рандомные картинки, которые будут подходить к этому сайту
+Вот обновлённый код с добавленными случайными (но тематически подходящими) изображениями с бесплатных фотостоков (Unsplash). Все ссылки ведут на изображения, которые доступны без регистрации и соответствуют тематике сайта:
+
+html
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>МКУ "Центр комплексного содержания территорий"</title>
+    <style>
+        /* Общие стили */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Шапка */
+        header {
+            background-color: #2c6e3c;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 60px;
+            margin-right: 15px;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .logo-text p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        /* Навигация */
+        nav {
+            background-color: #1a4b27;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            position: relative;
+        }
+        
+        nav ul li a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            transition: background 0.3s;
+        }
+        
+        nav ul li a:hover {
+            background-color: #2c6e3c;
+        }
+        
+        /* Баннер */
+        .banner {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .banner-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+        }
+        
+        .banner-content p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #2c6e3c;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #1a4b27;
+        }
+        
+        /* Основной контент */
+        .services {
+            padding: 50px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: #2c6e3c;
+            margin-bottom: 15px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .service-content {
+            padding: 20px;
+        }
+        
+        .service-content h3 {
+            margin-bottom: 10px;
+            color: #2c6e3c;
+        }
+        
+        /* Новости */
+        .news {
+            padding: 50px 0;
+            background-color: #e9f5ec;
+        }
+        
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .news-card {
+            background: white;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .news-content {
+            padding: 20px;
+        }
+        
+        .news-date {
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .news-content h3 {
+            margin-bottom: 10px;
+        }
+        
+        /* Контакты */
+        .contacts {
+            padding: 50px 0;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .contact-card {
+            background: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .contact-card i {
+            font-size: 2rem;
+            color: #2c6e3c;
+            margin-bottom: 20px;
+        }
+        
+        /* Подвал */
+        footer {
+            background-color: #1a4b27;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+            
+            .banner {
+                height: 300px;
+            }
+            
+            .banner-content h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <!-- Замените на реальное лого -->
+                <img src="https://images.unsplash.com/photo-1561484930-974554019ade?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Логотип МКУ ЦКСТ">
+                <div class="logo-text">
+                    <h1>МКУ "Центр комплексного содержания территорий"</h1>
+                    <p>Официальный сайт муниципального учреждения</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Навигация -->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">О нас</a></li>
+                <li><a href="#">Услуги</a></li>
+                <li><a href="#">Новости</a></li>
+                <li><a href="#">Документы</a></li>
+                <li><a href="#">Контакты</a></li>
+                <li><a href="#">Обратная связь</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Баннер -->
+    <section class="banner">
+        <div class="banner-content">
+            <h2>Комплексное содержание городских территорий</h2>
+            <p>Обеспечиваем чистоту, порядок и благоустройство муниципальных территорий для комфортной жизни горожан</p>
+            <a href="#" class="btn">Оставить заявку</a>
+        </div>
+    </section>
+    
+    <!-- Услуги -->
+    <section class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Наши услуги</h2>
+                <p>Полный спектр услуг по содержанию городских территорий</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Уборка территорий">
+                    <div class="service-content">
+                        <h3>Уборка городских территорий</h3>
+                        <p>Комплексная уборка улиц, площадей, парков и других общественных пространств</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Зеленое хозяйство">
+                    <div class="service-content">
+                        <h3>Зеленое хозяйство</h3>
+                        <p>Уход за зелеными насаждениями, газонами, клумбами и цветниками</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Дорожная деятельность">
+                    <div class="service-content">
+                        <h3>Дорожная деятельность</h3>
+                        <p>Содержание дорог, тротуаров, пешеходных зон в надлежащем состоянии</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Новости -->
+    <section class="news">
+        <div class="container">
+            <div class="section-title">
+                <h2>Новости</h2>
+                <p>Актуальные события и объявления</p>
+            </div>
+            
+            <div class="news-grid">
+                <div class="news-card">
+                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Осенний субботник">
+                    <div class="news-content">
+                        <div class="news-date">15.10.2023</div>
+                        <h3>Осенний субботник в городском парке</h3>
+                        <p>Приглашаем всех желающих принять участие в осеннем субботнике по уборке городского парка...</p>
+                        <a href="#" class="btn">Подробнее</a>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <img src="https://images.unsplash.com/photo-1585496534578-908e7a2eab33?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Контейнерные площадки">
+                    <div class="news-content">
+                        <div class="news-date">10.10.2023</div>
+                        <h3>Новые контейнерные площадки</h3>
+                        <p>В микрорайоне "Центральный" установлены новые контейнерные площадки для раздельного сбора мусора...</p>
+                        <a href="#" class="btn">Подробнее</a>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Конкурс озеленения">
+                    <div class="news-content">
+                        <div class="news-date">05.10.2023</div>
+                        <h3>Конкурс на лучшее озеленение</h3>
+                        <p>Объявляем конкурс среди жителей города на лучшее озеленение придомовых территорий...</p>
+                        <a href="#" class="btn">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Контакты -->
+    <section class="contacts">
+        <div class="container">
+            <div class="section-title">
+                <h2>Контакты</h2>
+                <p>Свяжитесь с нами удобным для вас способом</p>
+            </div>
+            
+            <div class="contact-info">
+                <div class="contact-card">
+                    <i>📍</i>
+                    <h3>Адрес</h3>
+                    <p>г. Ваш Город, ул. Центральная, д. 1</p>
+                </div>
+                
+                <div class="contact-card">
+                    <i>📞</i>
+                    <h3>Телефон</h3>
+                    <p>+7 (XXX) XXX-XX-XX</p>
+                    <p>Горячая линия: 8-800-XXX-XX-XX</p>
+                </div>
+                
+                <div class="contact-card">
+                    <i>✉️</i>
+                    <h3>Электронная почта</h3>
+                    <p>info@ckst.ru</p>
+                    <p>priem@ckst.ru</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Подвал -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">Главная</a>
+                <a href="#">О нас</a>
+                <a href="#">Услуги</a>
+                <a href="#">Новости</a>
+                <a href="#">Документы</a>
+                <a href="#">Контакты</a>
+            </div>
+            <div class="copyright">
+                &copy; 2023 МКУ "Центр комплексного содержания территорий". Все права защищены.
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Простой JavaScript для мобильного меню
+        document.addEventListener('DOMContentLoaded', function() {
+            // Можно добавить функционал для мобильного меню
+            console.log('Сайт загружен');
+            
+            // Пример: обработчик для кнопки "Оставить заявку"
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    alert('Форма заявки будет открыта в новом окне');
+                    // Здесь можно добавить открытие модального окна с формой
+                });
+            });
+        });
+    </script>
+</body>
+</html>
